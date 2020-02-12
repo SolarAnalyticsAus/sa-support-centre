@@ -1,0 +1,23 @@
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="https://www.solaranalytics.com/au">Solar Analytics Home</a>
+    <span>&nbsp;|&nbsp;</span>
+    <a id="footer-request-link" href="{{page_path 'new_request' ticket_form_id='360000583471'}}">Contact Us</a>
+    <div class="footer-language-selector">
+      {{#if alternative_locales}}
+        <div class="dropdown language-selector">
+          <button class="dropdown-toggle" aria-haspopup="true">
+            {{current_locale.name}}
+          </button>
+          <span class="dropdown-menu dropdown-menu-end" role="menu">
+            {{#each alternative_locales}}
+              <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+                {{name}}
+              </a>
+            {{/each}}
+          </span>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</footer>

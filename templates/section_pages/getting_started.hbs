@@ -1,0 +1,57 @@
+<div class="container-divider"></div>
+<div class="container">
+  <nav class="sub-nav">
+    <div class="search-right">
+      <!-- {{search scoped=settings.scoped_kb_search submit=false class="search-right"}} -->
+    </div>
+  </nav>
+  <div>
+    <!--
+    <p class="getting-started">
+      <img class="getting-started-img" src="{{asset 'overview.png'}}">
+    </p>
+    -->
+    <h1 class="center">Welcome to Solar Analytics</h1>
+    <div class="video-wrapper">
+      <iframe width="560" height="300" src="https://www.youtube.com/embed/Az5qFnRAZqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div>
+    <aside class="getting-started-sidebar">
+      <div class="collapsible-sidebar">
+        <button type="button" class="collapsible-sidebar-toggle" aria-labelledby="section-articles-title" aria-expanded="false"></button>
+        <div class="collapsible-sidebar-body">
+          <ul>
+            {{#each section.articles}}
+              {{#is @index 0}}
+                <li>
+                  <a href="{{url}}" class="sidenav-item current-article">{{title}}</a>
+                </li>
+              {{else}}
+                <li class="gss-nav">></li>
+                <li>
+                  <a href="{{url}}" class="gs-nav sidenav-item">{{title}}</a>
+                </li>
+              {{/is}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <div class="gs-sidebar">
+      <aside class="article-sidebar">
+        <div class="gs-collapsible-sidebar">
+          <button type="button" class="collapsible-sidebar-toggle" aria-labelledby="section-articles-title" aria-expanded="false"></button>
+          <div class="gs-sidenav collapsible-sidebar-body">
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="gs-section-body">{{section.description}}</div>
+
+    <div class="gs-nav-footer">
+      <a class="button right button-next-page" href="/hc/en-gb/articles/360036203991">How to Access your Dashboard</a>
+    </div>
+  </div>
+</div>

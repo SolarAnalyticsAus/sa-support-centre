@@ -1,0 +1,120 @@
+<div class="splash-page">
+  <div class="splash-page-content">
+    <div class="border-right">
+      <div>
+        <p><img src='{{asset 'system-owner.jpg'}}'/></p>
+        <h3>Solar System Owners</h3>
+        <p>
+          <span>Help with using your Solar Analytics dashboard</span>
+        </p>
+        <p>
+          <a class="button lp-button" href="/hc/en-gb/categories/{{settings.system_owners_category_id}}">Get Support</a>
+        </p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <p><img src='{{asset 'installer-resellers.jpg'}}'/></p>
+        <h3>Solar Analytics Installers & Resellers</h3>
+        <p>
+          <span>Support with installation and managment of your fleet dashboard</span>
+        </p>
+        <p>
+          <a class="button lp-button" href="/hc/en-gb/categories/{{settings.system_installers_category_id}}">Get Support</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<section class="section hero">
+  <div class="hero-inner">
+  <h2>Having trouble? We're here to help</h2>
+    {{search submit=false instant=settings.instant_search class='search search-full' scoped=settings.scoped_kb_search}}
+  </div>
+</section>
+
+<div class="container">
+  <section class="section knowledge-base">
+    <section class="categories blocks">
+      <ul class="blocks-list">
+        {{#each categories}}
+          {{#if ../has_multiple_categories}}
+            <li class="blocks-item">
+              <a href='{{url}}' class="blocks-item-link">
+                <h4 class="blocks-item-title">{{name}}</h4>
+                <p class="blocks-item-description">{{excerpt description}}</p>
+              </a>
+            </li>
+          {{else}}
+            {{#each sections}}
+              <li class="blocks-item">
+                <a href='{{url}}' class="blocks-item-link">
+                  <h4 class="blocks-item-title">
+                    {{name}}
+                  </h4>
+                  <p class="blocks-item-description">{{excerpt description}}</p>
+                </a>
+              </li>
+            {{/each}}
+          {{/if}}
+        {{/each}}
+      </ul>
+      {{pagination}}
+    </section>
+
+    {{#if promoted_articles}}
+      <section class="articles" id="promoted-items-list">
+        <h2 class="center">Frequently Asked Questions</h2>
+      </section>
+    {{/if}}
+  </section>
+  <div class="quick-links" style="display: none;">
+    <h2 class="center">Quick Links</h2>
+    <div class="ql-body">
+      <p>
+        <a href="https://solaranalytics.zendesk.com/hc/en-gb/articles/360015587612-Hardware-Warranty-">
+          <img class="ql-image" src="{{asset 'icon-warranty.png'}}"><br>
+          <span>Warranty</span>
+        </a>
+      </p>
+      <p>
+        <a href="https://solaranalytics.zendesk.com/hc/en-gb/sections/360003124732-Compliance-Documentation">
+          <img class="ql-image" src="{{asset 'icon-compliance.png'}}"><br>
+          <span>Compliance Documents</span>
+        </a>
+      </p>
+      <p>
+        <a href="#system-owner-support">
+          <img class="ql-image" src="{{asset 'icon-contactUs.png'}}"><br>
+          <span>System Owner Support</span>
+        </a>
+      </p>
+    </div>
+  </div>
+  <section class="more-help">
+    <h3>Can't find what you're looking for?<a class="button right contact-us-button" href="{{page_path 'new_request'}}">Contact Us</a></h3>
+    <span>We'll help you find the answer or connect you to our support team</span>
+  -->
+<!--
+  {{#if help_center.community_enabled}}
+    <section class="section home-section community">
+      <h2>{{t 'community'}}</h2>
+      {{#link 'community' class='community-link'}}
+        {{t 'join_conversation'}}
+      {{/link}}
+
+      <div class="community-image"></div>
+    </section>
+  {{/if}}
+-->
+<!--
+  <section class="section home-section activity">
+    {{#if settings.show_recent_activity}}
+      {{recent_activity}}
+    {{/if}}
+  </section>
+  -->
+  <!--
+</div>
+-->

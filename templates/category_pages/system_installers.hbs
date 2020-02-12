@@ -1,0 +1,69 @@
+<section class="section hero">
+  <div class="hero-inner">
+  <h2>Having trouble? We're here to help</h2>
+    {{search submit=false instant=settings.instant_search class='search full-search' scoped=settings.scoped_kb_search}}
+  </div>
+</section>
+
+<div class="container">
+  <h2 style="text-align: center;">Support Categories for Solar Analytics Installers & Resellers</h2>
+  <section class="section knowledge-base">
+  {{#with category}}
+    <section class="categories blocks">
+      <ul class="blocks-list">
+        {{#each sections}}
+          <li class="blocks-item">
+            <a href='{{url}}' class="blocks-item-link">
+              <h4 class="blocks-item-title">
+                {{name}}
+              </h4>
+              <p class="blocks-item-description">{{excerpt description}}</p>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </section>
+  {{/with}}
+  </section>
+</div>
+<div class="horizontal-border"></div>
+<div class="container promoted-articles-container">
+  <section class="articles" id="promoted-items-list">
+    <h2 class="center">Frequently Asked Questions</h2>
+  </section>
+</div>
+<div class="horizontal-border"></div>
+<div class="container promoted-articles-container">
+  <div class="quick-links">
+    <h2 class="center">Quick Links</h2>
+    <div class="ql-body">
+      <p>
+        <a href="https://solaranalytics.zendesk.com/hc/en-gb/articles/360015587612-Hardware-Warranty-">
+          <img class="ql-image" src="{{asset 'icon-warranty.png'}}"><br>
+          <span>Warranty</span>
+        </a>
+      </p>
+      <p>
+        <a href="https://solaranalytics.zendesk.com/hc/en-gb/articles/360021413112-Solar-Analytics-Solar-Smart-Meter-Certifications-V1">
+          <img class="ql-image" src="{{asset 'icon-compliance.png'}}"><br>
+          <span>Compliance Documents</span>
+        </a>
+      </p>
+      <p>
+        <a href="/hc/en-gb/categories/{{settings.system_owners_category_id}}">
+          <img class="ql-image" src="{{asset 'icon-contactUs.png'}}"><br>
+          <span>System Owner Support</span>
+        </a>
+      </p>
+    </div>
+  </div>
+  <section class="more-help">
+    <div>
+      <h3>Can't find what you're looking for?</h3>
+      <span>We'll help you find the answer or connect you to our support team</span>
+    </div>
+    <div>
+      <a class="button right contact-us-button" href="{{page_path 'new_request' ticket_form_id=settings.system_installers_form_id}}">Contact Us</a>
+    </div>
+  </section>
+</div>

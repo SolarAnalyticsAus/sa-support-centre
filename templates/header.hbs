@@ -1,0 +1,35 @@
+<header class="header">
+  <div class="logo">
+    {{#link 'help_center'}}
+      <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}">
+    {{/link}}
+  </div>
+  <div class="nav-wrapper">
+    <button class="menu-button" aria-controls="user-nav" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13"/>
+      </svg>
+    </button>
+    <nav class="user-nav" id="user-nav">
+      <a class="community-link" href="" onClick="ga('send', 'event', 'Community Link', 'Community Link From', 'https://solaranalyticstest.zendesk.com/hc/en-gb');">Community</a>
+      <p style="display: none;" class="coming-soon"><span>Coming Soon</span></p>
+      <a id="header-support-link" class="support-link hidden" href="">
+        <span id="header-support-text">Support</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" focusable="false" viewBox="0 0 16 16" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 14.5l6.1-6.1c.2-.2.2-.5 0-.7L5 1.5"/>
+        </svg>
+      </a>
+      <p style="display: none;" class="support-link-box">
+        <a class="system-owners-link" href="/hc/en-gb/categories/{{settings.system_owners_category_id}}">System Owners Support</a>
+        <a class="system-installers-link" href="/hc/en-gb/categories/{{settings.system_installers_category_id}}">SA Reseller Support</a>
+      </p>
+      <a class="system-owners-link mh-link" href="/hc/en-gb/categories/{{settings.system_owners_category_id}}">System Owners Support</a>
+      <a class="system-installers-link mh-link" href="/hc/en-gb/categories/{{settings.system_installers_category_id}}">SA Reseller Support</a>
+      <a href="/hc/en-gb/sections/{{settings.video_tutorials_section_id}}">Video Tutorials</a>
+      <!-- {{link 'new_request' class='submit-a-request'}} -->
+      <a class="header-link" href="https://my.solaranalytics.com/au/">My Dashboard</a>
+    </nav>
+
+    <!-- {{user_info}} -->
+  </div>
+</header>

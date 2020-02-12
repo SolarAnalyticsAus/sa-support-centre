@@ -1,0 +1,42 @@
+<section class="section hero">
+  <div class="hero-inner">
+  <h2>Having trouble? We're here to help</h2>
+    {{search submit=false instant=settings.instant_search class='search search-full' scoped=settings.scoped_kb_search}}
+  </div>
+</section>
+
+<div class="container">
+  <h2 style="text-align: center;">Support Categories for Solar System Owners</h2>
+  <section class="section knowledge-base">
+    <section class="categories blocks">
+      <ul class="blocks-list">
+        {{#each sections}}
+          <li class="blocks-item">
+            <a href='{{url}}' class="blocks-item-link">
+              <h4 class="blocks-item-title">
+                {{name}}
+              </h4>
+              <p class="blocks-item-description">{{excerpt description}}</p>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </section>
+
+  </section>
+</div>
+<div class="horizontal-border"></div>
+<div class="container promoted-articles-container">
+  <section class="articles" id="promoted-items-list">
+    <h2 class="center">Frequently Asked Questions</h2>
+  </section>
+  <section class="more-help">
+    <div>
+      <h3>Can't find what you're looking for?</h3>
+      <span>We'll help you find the answer or connect you to our support team</span>
+    </div>
+    <div>
+      <a class="button right contact-us-button" href="{{page_path 'new_request' ticket_form_id=settings.system_owners_form_id}}">Contact Us</a>
+    </div>
+  </section>
+</div>

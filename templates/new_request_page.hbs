@@ -1,0 +1,91 @@
+<div class="container-divider"></div>
+<div class="container">
+  <nav class="sub-nav">
+    {{breadcrumbs}}
+    {{search submit=false}}
+  </nav>
+
+  <h1>
+    Contact Customer Support
+    {{!--t 'submit_a_request'--}}
+    {{#if follow_up}}
+      <span class="follow-up-hint">
+        {{follow_up}}
+      </span>
+    {{/if}}
+  </h1>
+
+  <div class="form">
+    {{request_form}}
+  </div>
+  <div id="suggested-articles-container" class="suggested-articles-container">
+    <div id="suggested-articles">
+      <h3>We think this will help:</h3>
+      <div id="suggested-articles-text"></div>
+    </div>
+    <div class="more-help-container">
+      <h4 id="more-help-header">Still can't find what you're looking for?</h4>
+      <div class="still-need-help">
+        <div class="support-details">
+          <div>
+            <p class="email-support">
+              <img src="{{asset 'icon-note.png'}}"/>
+              <span>Send us a note</span>
+            </p>
+          </div>
+          <div>
+            <p class="center">
+              <span>Or</span>
+            </p>
+          </div>
+          <div class="phone-support-info">
+            <p class="phone-support">
+              <img src="{{asset 'icon-phone.png'}}"/>
+              <a href="tel:+1300651137">1300 651 137</a>
+            </p>
+            <p class="support-hours">
+              <span>Monday to Friday</span><br>
+              <span>9am to 5pm</span><br>
+              <span>Australian Eastern Standard Time</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="suggested-article-modal" class="suggested-article-modal">
+  <div id="suggested-article-modal-container" class="suggested-article-modal-container">
+    <i class="suggested-article-modal-close"></i>
+    <div class="suggested-article-content-container">
+      <div id="suggested-article-content" class="suggested-article-content">
+
+        <!--  change in design -->
+        <!--
+        <div class="more-help-container">
+          <h4 class="modal-need-help">I still need help</h4>
+          <div class="modal-still-need-help">
+            <div class="support-details">
+              <p class="email-support">
+                <img src="{{asset 'icon-email.png'}}"/>
+                <span>Email Support</span>
+              </p>
+              <div class="phone-support-info">
+                <p class="phone-support">
+                  <img src="{{asset 'icon-phone.png'}}"/>
+                  <a href="tel:+1300651137">1300 651 137</a>
+                </p>
+                <p class="support-hours">
+                  <span>Monday to Friday</span><br>
+                  <span>9am to 5pm</span><br>
+                  <span>Australian Eastern Standard Time</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        -->
+    </div>
+  </div>
+  </div>
+</div>
