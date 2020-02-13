@@ -627,7 +627,6 @@ $(document).ready(function () {
                 var forSelector = '#' + $(this).attr('for');
                 $(forSelector).on('change', function (e) {
                     selectedSuggestedArticle = null; // Reset selection
-                    console.log('Reset suggested article');
                     $(installer_hidden_fields).addClass('hide-form-fields');
                     $(owner_hidden_fields).addClass('hide-form-fields');
                     $('#new_request footer, .request_anonymous_requester_email, .request_subject, .request_description').hide();
