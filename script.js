@@ -669,6 +669,13 @@ $(document).ready(function () {
 
     }
 
+    // Google Analytics
+    // Track articles where users try to submit a ticket
+    $('#contact-us-article').on('click', event => {
+        const articleTitle = $('h1').attr('title');
+        ga('send', 'event', 'Contact Us', 'click from article', articleTitle);
+    });
+
 });
 
 
