@@ -1,7 +1,7 @@
 {
-    "name": "SuccessCX Live ",
-    "author": "Zendesk",
-    "version": "1.27.0",
+    "name": "Solar Analytics Theme",
+    "author": "Zendesk, SucessCX, Solar Analytics",
+    "version": "1.27.1",
     "api_version": 1,
     "default_locale": "en-gb",
     "settings": [
