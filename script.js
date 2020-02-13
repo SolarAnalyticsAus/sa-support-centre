@@ -646,6 +646,11 @@ $(document).ready(function () {
                             $('#suggested-articles').show();
                             $('.suggested-article-link').click(function (e) {
                                 event.preventDefault();
+
+                                // Track suggested articles
+                                selectedSuggestedArticle = $(`#${e.target.id}`).text();
+                                ga('send', 'event', 'Suggested Articles', 'Click', selectedSuggestedArticle);
+
                                 for (var j = 0; j < data.articles.length; j++) {
                                     if ($(this).prop('id').indexOf(articles[j].id) > -1) {
                                         var suggested_article_modal = '<h3>' + articles[j].title + '</h3><p class="suggested-article-text">' + articles[j].body + '</p>';
@@ -691,12 +696,6 @@ $(document).ready(function () {
 
     $('#footer-request-link').click(() => {
         ga('send', 'event', 'Contact Us', 'Click from home', 'Footer');
-    });
-
-    // Track viewed suggested articles
-    $('.suggested-article-link').click(event => {
-        selectedSuggestedArticle = $(`#${event.target.id}`).text();
-        ga('send', 'event', 'Suggested Articles', 'Click', selectedSuggestedArticle);
     });
 
     // Track the suggested article viewed before submitting the form
