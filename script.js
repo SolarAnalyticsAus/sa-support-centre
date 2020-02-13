@@ -453,17 +453,6 @@ $(document).ready(function () {
      * Control display of 'Support Link' in header
      */
 
-    var support_link_text = (url_location.indexOf(system_owners_category_id) > -1 || url_location.indexOf(owner_form_id) > -1) ? 'System Owners Support' : 'SA Reseller Support';
-
-    var request_link = (sessionStorage.getItem('request_link')) ? sessionStorage.getItem('request_link') : '';
-    if (url_location.indexOf(system_installers_category_id) > -1) {
-        request_link = HC_SETTINGS.base_url + '/requests/new?ticket_form_id=' + installer_form_id;
-        sessionStorage.setItem('request_link', request_link);
-    } else if (url_location.indexOf(system_owners_category_id) > -1) {
-        request_link = HC_SETTINGS.base_url + '/requests/new?ticket_form_id=' + owner_form_id;
-        sessionStorage.setItem('request_link', request_link);
-    }
-    $('#footer-request-link').attr('href', request_link);
     $('.system-installers-link').click(function () {
         $('.support-link-box').hide();
     });
@@ -703,6 +692,14 @@ $(document).ready(function () {
             ga('send', 'event', 'Submit Form', 'Submit after viewing suggested article', selectedSuggestedArticle);
         } else {
             ga('send', 'event', 'Submit Form', 'Submit immediately');
+        }
+    });
+
+    // Track searches
+    $('form[role="search"]').on('submit', () => {
+        const query = $(this).find('input[type="search"]').val().trim();
+        if (query.length === 0) {
+            ga('send', 'event', 'Search', 'Submit', query.toLowerCase());
         }
     });
 
