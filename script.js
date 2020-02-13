@@ -671,9 +671,21 @@ $(document).ready(function () {
 
     // Google Analytics
     // Track articles where users try to submit a ticket
-    $('#contact-us-article').on('click', event => {
+    $('#contact-us-article').on('click', () => {
         const articleTitle = $('h1').attr('title');
-        ga('send', 'event', 'Contact Us', 'click from article', articleTitle);
+        ga('send', 'event', 'Contact Us', 'Click from article', articleTitle);
+    });
+
+    $('#contact-us-owner').on('click', () => {
+        ga('send', 'event', 'Contact Us', 'Click from home', 'Owner');
+    });
+
+    $('#contact-us-installer').on('click', () => {
+        ga('send', 'event', 'Contact Us', 'Click from home', 'Installer');
+    });
+
+    $('#footer-request-link').on('click', () => {
+        ga('send', 'event', 'Contact Us', 'Click from home', 'Footer');
     });
 
 });
