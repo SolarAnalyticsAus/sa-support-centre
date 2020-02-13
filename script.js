@@ -232,6 +232,8 @@ $(document).ready(function () {
     var installer_hidden_fields = HC_SETTINGS.system_installers_hidden_fields;
     var owner_hidden_fields = HC_SETTINGS.system_owners_hidden_fields;
 
+    let selectedSuggestedArticle = null;
+
     /*
      * Show Support Type from header on all but Home page / landing page
      */
@@ -624,6 +626,8 @@ $(document).ready(function () {
             if ($(this).text().indexOf('Tell us more') > -1) {
                 var forSelector = '#' + $(this).attr('for');
                 $(forSelector).on('change', function (e) {
+                    selectedSuggestedArticle = null; // Reset selection
+                    console.log('Reset suggested article');
                     $(installer_hidden_fields).addClass('hide-form-fields');
                     $(owner_hidden_fields).addClass('hide-form-fields');
                     $('#new_request footer, .request_anonymous_requester_email, .request_subject, .request_description').hide();
@@ -669,23 +673,39 @@ $(document).ready(function () {
 
     }
 
-    // Google Analytics
+    /* Google Analytics */
+
     // Track articles where users try to submit a ticket
-    $('#contact-us-article').on('click', () => {
+    $('#contact-us-article').click(() => {
         const articleTitle = $('h1').attr('title');
         ga('send', 'event', 'Contact Us', 'Click from article', articleTitle);
     });
 
-    $('#contact-us-owner').on('click', () => {
+    $('#contact-us-owner').click(() => {
         ga('send', 'event', 'Contact Us', 'Click from home', 'Owner');
     });
 
-    $('#contact-us-installer').on('click', () => {
+    $('#contact-us-installer').click(() => {
         ga('send', 'event', 'Contact Us', 'Click from home', 'Installer');
     });
 
-    $('#footer-request-link').on('click', () => {
+    $('#footer-request-link').click(() => {
         ga('send', 'event', 'Contact Us', 'Click from home', 'Footer');
+    });
+
+    // Track viewed suggested articles
+    $('.suggested-article-link').click(event => {
+        selectedSuggestedArticle = $(`#${event.target.id}`).text();
+        ga('send', 'event', 'Suggested Articles', 'Click', selectedSuggestedArticle);
+    });
+
+    // Track the suggested article viewed before submitting the form
+    $('#new_request').submit(() => {
+        if (selectedSuggestedArticle != null) {
+            ga('send', 'event', 'Submit Form', 'Submit after viewing suggested article', selectedSuggestedArticle);
+        } else {
+            ga('send', 'event', 'Submit Form', 'Submit immediately');
+        }
     });
 
 });
