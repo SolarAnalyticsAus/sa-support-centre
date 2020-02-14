@@ -682,10 +682,6 @@ $(document).ready(function () {
         ga('send', 'event', 'Contact Us', 'Click from home', 'Installer');
     });
 
-    $('#footer-request-link').click(() => {
-        ga('send', 'event', 'Contact Us', 'Click from home', 'Footer');
-    });
-
     // Track the suggested article viewed before submitting the form
     $('#new_request').submit(() => {
         if (selectedSuggestedArticle != null) {
@@ -696,9 +692,9 @@ $(document).ready(function () {
     });
 
     // Track searches
-    $('form[role="search"]').on('submit', () => {
+    $('form[role="search"]').submit(() => {
         const query = $(this).find('input[type="search"]').val().trim();
-        if (query.length === 0) {
+        if (query.length > 0) {
             ga('send', 'event', 'Search', 'Submit', query.toLowerCase());
         }
     });
