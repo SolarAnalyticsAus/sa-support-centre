@@ -699,6 +699,17 @@ $(document).ready(function () {
         }
     });
 
+    // Track searches from instant search
+    $('form[role="search"]').keypress(event => {
+        // Enter key
+        if (event.which === 13) {
+            const query = $(this).find('input[type="search"]').val().trim();
+            if (query.length > 0) {
+                ga('send', 'event', 'Search', 'Submit', query.toLowerCase());
+            }
+        }
+    });
+
 });
 
 
