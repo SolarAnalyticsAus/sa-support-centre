@@ -700,7 +700,7 @@ $(document).ready(function () {
     });
 
     // Track searches from instant search
-    $('form[role="search"].full-search').keypress(event => {
+    $('form[role="search"].full-search').keydown(event => {
         // Enter key
         if (event.which === 13) {
             const query = $(this).find('input[type="search"]').val().trim();
