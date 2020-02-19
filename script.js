@@ -682,8 +682,17 @@ $(document).ready(function () {
         ga('send', 'event', 'Contact Us', 'Click from home', 'Installer');
     });
 
-    // Track the suggested article viewed before submitting the form
-    $('#new_request').submit(() => {
+    // // Track the suggested article viewed before submitting the form
+    // $('#new_request').submit(() => {
+    //     if (selectedSuggestedArticle != null) {
+    //         ga('send', 'event', 'Submit Form', 'Submit after viewing suggested article', selectedSuggestedArticle);
+    //     } else {
+    //         ga('send', 'event', 'Submit Form', 'Submit immediately');
+    //     }
+    // });
+
+    // Fallback for capturing form submission
+    $('input[type="submit"][name="commit"]').click(() => {
         if (selectedSuggestedArticle != null) {
             ga('send', 'event', 'Submit Form', 'Submit after viewing suggested article', selectedSuggestedArticle);
         } else {
