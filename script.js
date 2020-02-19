@@ -683,7 +683,8 @@ $(document).ready(function () {
     });
 
     // Track the suggested article viewed before submitting the form
-    $('#new_request').submit(() => {
+    // Fallback to input click for capturing form submission instead of form submit event
+    $('input[type="submit"][name="commit"]').click(() => {
         if (selectedSuggestedArticle != null) {
             ga('send', 'event', 'Submit Form', 'Submit after viewing suggested article', selectedSuggestedArticle);
         } else {
