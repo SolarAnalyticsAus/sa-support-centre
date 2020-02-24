@@ -552,6 +552,14 @@ $(document).ready(function () {
         $('.request_subject, .request_description, #new_request footer').show();
         $('.request_anonymous_requester_email').show().insertBefore('.request_subject');
         $('#upload-dropzone').parent().show();
+
+        // Track form submissions, under assumption that user will submit the form
+        // after clicking `Send us a note`
+        if (selectedSuggestedArticle != null) {
+            ga('send', 'event', 'Submit Form', 'Submit after viewing suggested article', selectedSuggestedArticle);
+        } else {
+            ga('send', 'event', 'Submit Form', 'Submit immediately');
+        }
     });
 
     $(".support-link").click(function (event) {
@@ -680,15 +688,6 @@ $(document).ready(function () {
 
     $('#contact-us-installer').click(() => {
         ga('send', 'event', 'Contact Us', 'Click from home', 'Installer');
-    });
-
-    // Track the suggested article viewed before submitting the form
-    $('#new_request').submit(() => {
-        if (selectedSuggestedArticle != null) {
-            ga('send', 'event', 'Submit Form', 'Submit after viewing suggested article', selectedSuggestedArticle);
-        } else {
-            ga('send', 'event', 'Submit Form', 'Submit immediately');
-        }
     });
 
     // Track searches
